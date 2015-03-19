@@ -1,0 +1,16 @@
+{
+  "jspm": {
+    "main": "dist/js/bootstrap-wizard",
+    "shim": {
+      "dist/js/bootstrap-wizard": {
+        "exports": "bootstrapWizard"
+      }
+    }
+  },
+  "main": "dist/js/bootstrap-wizard",
+  "shim": {
+    "dist/js/bootstrap-wizard": {
+      "exports": "bootstrapWizard"
+    }
+  }
+}

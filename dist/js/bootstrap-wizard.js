@@ -157,8 +157,31 @@
             // if show was not prevented by listener
             // set $current to the nav li and add the visited and active classes
             this.$current = $li.addClass("visited active");
+
+            // fix navigation
+            this.fixNavigation($li);
+            
             // get the href for the current nav
             href = this.$current.find("a").attr("href");
+
+            // hide all the wizard panes
+            this.$body.find(".wizard-pane:visible").hide();
+            // display the current pane
+            this.$body.find( href ).show();
+
+            // if the mobile nav is displayed set the header
+            if ( this.$nav.find(".wizard-nav-header").is(":visible") ) {
+                var navTitle = this.$current.children("a").text();
+                if ( ($parentNav = this.$current.parent("ul.collapse")).length ) {
+                    navTitle = $parentNav.parent("li").children("a").text() + ' > ' + navTitle;
+                }
+                this.$nav.find("h3.wizard-nav-title").text(navTitle);
+                this.$nav.find(".wizard-nav").collapse("hide");
+            }
+
+        },
+
+        fixNavigation: function() {
 
             /* metismenu - https://github.com/onokumus/metisMenu */
             // remove the active class from siblings
@@ -195,8 +218,6 @@
                     this.$current = this.$next.addClass("visited active");
                     // now next needs to be reset from the new current
                     this.$next = this.$current.nextAll(":not(.disabled):first");
-                    // get href from the new current
-                    href = this.$current.find("a").attr("href");
                 }
             } else {
                 this.$next = this.$current.nextAll(":not(.disabled):first");
@@ -222,22 +243,6 @@
                 this.$nextButton.hide();
                 this.$submitButton.show();
             }
-
-            // hide all the wizard panes
-            this.$body.find(".wizard-pane:visible").hide();
-            // display the current pane
-            this.$body.find( href ).show();
-
-            // if the mobile nav is displayed set the header
-            if ( this.$nav.find(".wizard-nav-header").is(":visible") ) {
-                var navTitle = this.$current.children("a").text();
-                if ( ($parentNav = this.$current.parent("ul.collapse")).length ) {
-                    navTitle = $parentNav.parent("li").children("a").text() + ' > ' + navTitle;
-                }
-                this.$nav.find("h3.wizard-nav-title").text(navTitle);
-                this.$nav.find(".wizard-nav").collapse("hide");
-            }
-
         },
 
         _resize: function() {
