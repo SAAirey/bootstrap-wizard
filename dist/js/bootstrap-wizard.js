@@ -169,16 +169,6 @@
             // display the current pane
             this.$body.find( href ).show();
 
-            // if the mobile nav is displayed set the header
-            if ( this.$nav.find(".wizard-nav-header").is(":visible") ) {
-                var navTitle = this.$current.children("a").text();
-                if ( ($parentNav = this.$current.parent("ul.collapse")).length ) {
-                    navTitle = $parentNav.parent("li").children("a").text() + ' > ' + navTitle;
-                }
-                this.$nav.find("h3.wizard-nav-title").text(navTitle);
-                this.$nav.find(".wizard-nav").collapse("hide");
-            }
-
         },
 
         fixNavigation: function() {
@@ -242,6 +232,16 @@
             } else {
                 this.$nextButton.hide();
                 this.$submitButton.show();
+            }
+
+            // if the mobile nav is displayed set the header
+            if ( this.$nav.find(".wizard-nav-header").is(":visible") ) {
+                var navTitle = this.$current.children("a").text();
+                if ( ($parentNav = this.$current.parent("ul.collapse")).length ) {
+                    navTitle = $parentNav.parent("li").children("a").text() + ' > ' + navTitle;
+                }
+                this.$nav.find("h3.wizard-nav-title").text(navTitle);
+                this.$nav.find(".wizard-nav").collapse("hide");
             }
         },
 
