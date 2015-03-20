@@ -176,6 +176,10 @@
 
             navs.each(function() {
                 $(this).removeClass("disabled");
+
+                $(this).children("ul").first().children("li").each(function() {
+                    $(this).removeClass("disabled");
+                });
             });
 
             disabledStepIndices.forEach(function(elem, index, arr) {
@@ -187,7 +191,7 @@
                 {
                     var childStepIndex = parseInt(portions[1]);
 
-                    navs.eq(itemIndex).children('ul').first().children('li').eq(childStepIndex).addClass("disabled");
+                    navs.eq(itemIndex).children("ul").first().children("li").eq(childStepIndex).addClass("disabled");
                 }
                 else {
                     navs.eq(itemIndex).addClass("disabled");
