@@ -174,7 +174,9 @@
         setDisabledSteps: function(disabledStepIndices) {
             var navs = this.$current.parent().children();
 
-            navs.removeClass("disabled");
+            navs.each(function() {
+                $(this).removeClass("disabled");
+            });
 
             disabledStepIndices.forEach(function(elem, index, arr) {
                 var nav = navs.eq(elem);
