@@ -159,7 +159,7 @@
             this.$current = $li.addClass("visited active");
 
             // fix navigation
-            this.fixNavigation($li);
+            this.fixNavigation();
             
             // get the href for the current nav
             href = this.$current.find("a").attr("href");
@@ -174,7 +174,17 @@
         setDisabledSteps: function(disabledStepIndices) {
             var navs = this.$current.parent().children();
 
+            disabledStepIndices.forEach(function(elem, index, arr) {
+                var nav = navs.eq(elem);
+
+                console.log(nav);
+
+                navs.eq(elem).addClass("disabled");
+            });
+
             console.log(navs);
+
+            this.fixNavigation();
         },
 
         fixNavigation: function() {
