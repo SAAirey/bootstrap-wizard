@@ -183,13 +183,9 @@
 
                 var itemIndex = parseInt(portions[0]);
 
-                console.log('itemIndex', itemIndex);
-
                 if (portions.length > 1)
                 {
                     var childStepIndex = parseInt(portions[1]);
-
-                    console.log('childStepIndex', childStepIndex);
 
                     navs.eq(itemIndex).children('ul').first().children('li').eq(childStepIndex).addClass("disabled");
                 }
