@@ -174,15 +174,13 @@
         setDisabledSteps: function(disabledStepIndices) {
             var navs = this.$current.parent().children();
 
+            navs.removeClass("disabled");
+
             disabledStepIndices.forEach(function(elem, index, arr) {
                 var nav = navs.eq(elem);
 
-                console.log(nav);
-
                 navs.eq(elem).addClass("disabled");
             });
-
-            console.log(navs);
 
             this.fixNavigation();
         },
