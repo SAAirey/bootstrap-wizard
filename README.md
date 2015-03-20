@@ -1,3 +1,5 @@
+Forked from https://github.com/gwrey/bootstrap-wizard to add ability to disable steps
+
 # BootstrapWizard - v0.1 
 http://www.bootstrapwizard.com
 
@@ -65,13 +67,16 @@ $(".wizard").bootstrapWizard(options);
 ## Methods
 <table>
     <tr>
-        <th>method</th><th>description</th>
+        <th>method</th><th>description</th><th>Parameters</th>th>
     </tr>
     <tr>
-        <td>markAllVisited</td><td>mark all nav items as visited</td>
+        <td>markAllVisited</td><td>mark all nav items as visited</td><td></td>
     </tr>
     <tr>
-        <td>serialize</td><td>serialize all the form data</td>
+        <td>serialize</td><td>serialize all the form data</td><td></td>
+    </tr>
+    <tr>
+        <td>setDisabledSteps</td><td>disables step by index</td><td>disabledStepIndices (Array): an array of step indices to disable</td>
     </tr>
 </table>
 
