@@ -179,9 +179,19 @@
             });
 
             disabledStepIndices.forEach(function(elem, index, arr) {
-                var nav = navs.eq(elem);
+                var portions = elem.split('.');
 
-                navs.eq(elem).addClass("disabled");
+                var itemIndex = parseInt(portions[0]);
+
+                if (portions.length > 1)
+                {
+                    var childStepIndex = parseInt(portions[1]);
+
+                    navs.eq(itemIndex).children().eq(childStepIndex).addClass("disabled");
+                }
+                else {
+                    navs.eq(itemIndex).addClass("disabled");
+                }
             });
 
             this.fixNavigation();
