@@ -191,7 +191,7 @@
 
                     console.log('childStepIndex', childStepIndex);
 
-                    navs.eq(itemIndex).children().eq(childStepIndex).addClass("disabled");
+                    navs.eq(itemIndex).children('ul').first().children('li').eq(childStepIndex).addClass("disabled");
                 }
                 else {
                     navs.eq(itemIndex).addClass("disabled");
