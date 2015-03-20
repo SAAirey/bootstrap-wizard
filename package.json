@@ -1,16 +1,19 @@
 {
-  "name": "bootstrap-wizard",
+  "name": "saairey-bootstrap-wizard",
   "version": "0.1.0",
-  "description": "Bootstrap Wizard",
+  "description": "SAAirey Bootstrap Wizard",
   "keywords": [
     "wizard"
   ],
   "author": "Sean Airey <saairey@msn.com>",
-  "main": "dist/js/bootstrap-wizard.js",
+  "directories": {
+    "lib": "dist"
+  },
+  "main": "js/bootstrap-wizard.js",
   "jspm": {
-    "main": "dist/js/bootstrap-wizard",
+    "main": "js/bootstrap-wizard",
     "shim": {
-      "dist/js/bootstrap-wizard": {
+      "js/bootstrap-wizard": {
         "exports": "bootstrapWizard"
       }
     }
