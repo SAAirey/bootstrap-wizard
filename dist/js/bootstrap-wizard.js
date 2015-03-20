@@ -171,6 +171,12 @@
 
         },
 
+        setDisabledSteps: function(disabledStepIndices) {
+            var navs = this.$current.parent().children();
+
+            console.log(navs);
+        },
+
         fixNavigation: function() {
 
             /* metismenu - https://github.com/onokumus/metisMenu */
