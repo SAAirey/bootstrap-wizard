@@ -225,6 +225,10 @@
                 // if prev has children set prev to the last child
                 $childNav.find("li.active").removeClass("active");
                 this.$prev = $childNav.children("li:not(.disabled):last");
+
+                if (this.$prev.length === 0) {
+                    this.$prev = this.$current.prevAll(":not(.disabled):first");
+                }
             }
 
             if ( ($childNav = this.$current.children("ul")).length ) {
