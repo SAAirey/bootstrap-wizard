@@ -234,7 +234,7 @@
                 this.$next = $childNav.children("li:not(.disabled):first");
                 if (this.$next.length === 0) {
                     // if no children are enabled then set next to the next sibling
-                    this.$next = this.$current.siblings("li:not(.disabled):first");
+                    this.$next = this.$current.nextAll("li:not(.disabled):first");
                 }
                 // get the href for the current nav
                 href = this.$current.find("a").attr("href");
