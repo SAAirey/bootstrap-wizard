@@ -232,6 +232,12 @@
                 $childNav.collapse("show").find("li.active").removeClass("active");
                 // set next to the first child
                 this.$next = $childNav.children("li:not(.disabled):first");
+                if (this.$next.length === 0) {
+                    // if no children are enabled then set next to the next sibling
+                    this.$next = this.$current.siblings("li:not(.disabled):first");
+                }
+                // get the href for the current nav
+                href = this.$current.find("a").attr("href");
                 if ( href == '' ) {
                     // if current doesn't have a pane to display, no href,
                     // set current to next which is now the first child
