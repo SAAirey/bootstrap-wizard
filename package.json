@@ -11,11 +11,6 @@
   },
   "main": "js/bootstrap-wizard.js",
   "jspm": {
-    "main": "js/bootstrap-wizard",
-    "shim": {
-      "js/bootstrap-wizard": {
-        "exports": "bootstrapWizard"
-      }
-    }
+    "main": "js/bootstrap-wizard"
   }
 }
